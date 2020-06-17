@@ -4,11 +4,11 @@ import '@/styles/main.sass'
 
 // Import Semantic Ui Basics
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import i18n from './i18n'
+import App from '@/App.vue'
+import router from '@/router'
+import i18n from '@/plugins/i18n'
 import SuiVue from 'semantic-ui-vue'
-import store from './store'
+import store from '@/store'
 
 // Import Layouts
 import Basic from '@/layouts/basic'
