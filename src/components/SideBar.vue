@@ -1,18 +1,18 @@
-<template>
-  <sui-menu
+<template lang="pug">
+  sui-menu(
     is="sui-sidebar"
     :visible="visible"
     :dimmed="dimmed"
     animation="overlay"
     direction="right"
     vertical
-  >
-    <sui-menu-item to="/"> <sui-icon name="home" /> Home </sui-menu-item>
-    <sui-menu-item to="/"> <sui-icon name="gamepad" /> Games </sui-menu-item>
-    <sui-menu-item to="/">
-      <sui-icon name="camera" /> Channels
-    </sui-menu-item>
-  </sui-menu>
+  )
+    sui-menu-item(@click="$router.push({name: 'podcasts'})")
+      sui-icon(name="home")
+      | Podcasts
+    sui-menu-item(@click="$router.push({name: 'demo'})")
+      sui-icon(name="demo")
+      | Demo
 </template>
 
 <script>

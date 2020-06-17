@@ -11,24 +11,25 @@ Vue.use(VueRouter)
 
   const routes = [
 
-  // Frontend
   {
     path: '/',
-    name: 'start',
-    component: page('start.vue'),
-    meta: {
-      layout: 'basic'
-    }
-  },
-
-  {
-    path: '/podcasts',
     name: 'podcasts',
     component: Podcasts,
     meta: {
       layout: 'basic'
     }
   },
+
+  {
+    path: '/demo',
+    name: 'demo',
+    component: page('demo.vue'),
+    meta: {
+      layout: 'basic'
+    }
+  },
+
+
 
   // { path: '/', name: 'welcome', component: page('welcome.vue') },
 
