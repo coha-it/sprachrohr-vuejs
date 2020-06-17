@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .ui.card(v-for='(podcast, i) in podcasts' :key='i' style='max-width: 100%; min-width: 100%;')
+  .ui.card(v-for='(podcast, i) in podcasts' :key='podcast._id' style='max-width: 100%; min-width: 100%;')
     .content(style='padding: 0;')
       .ui.items
         .item
@@ -22,7 +22,8 @@ div
             .extra
               .ui.label IMAX
               .ui.label
-                i.globe.icon Additional Languages
+                i.globe.icon
+                | Additional Languages
 </template>
 <script>
 import { mapGetters } from 'vuex'
