@@ -10,7 +10,7 @@
   </sui-menu>
 </template>
 <script>
-import Player from '~/components/Frontend/Player'
+import Player from '@/components/Player'
 
 export default {
   name: 'BottomBar',

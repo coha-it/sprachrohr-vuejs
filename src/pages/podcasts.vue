@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import PodcastList from '@/components/Frontend/PodcastList'
+import PodcastList from '@/components/PodcastList'
 
 export default {
 

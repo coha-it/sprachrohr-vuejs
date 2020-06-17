@@ -1,5 +1,6 @@
 <template>
   <div class="ui basic segment">
+    HALLO
     <h3 class="ui header">Application Content</h3>
     <p>
       <router-link to="/podcasts">Podcasts</router-link>

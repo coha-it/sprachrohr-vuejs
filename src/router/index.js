@@ -15,7 +15,7 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'start',
-    component: page('frontend/start.vue')
+    component: page('start.vue')
   },
 
   {
@@ -42,7 +42,7 @@ Vue.use(VueRouter)
   //     { path: 'password', name: 'settings.password', component: page('settings/password.vue') }
   //   ] },
 
-  { path: '*', component: page('errors/404.vue') }
+  { path: '*', component: page('404.vue') }
 ]
 
 const router = new VueRouter({
