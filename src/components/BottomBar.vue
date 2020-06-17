@@ -1,14 +1,8 @@
-<template>
-  <sui-menu
-    is="sui-sidebar"
-    animation="overlay"
-    direction="bottom"
-    visible
-    position="fixed"
-  >
-    <Player />
-  </sui-menu>
+<template lang="pug">
+sui-menu(is="sui-sidebar" animation="overlay" direction="bottom" visible position="fixed")
+  Player
 </template>
+
 <script>
 import Player from '@/components/Player'
 

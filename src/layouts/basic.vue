@@ -1,30 +1,64 @@
-<template>
-  <div class="basic-layout d-flex align-items-center justify-content-center m-0 bg-white">
-    <child />
-  </div>
+<template lang="pug">
+.basic-layout-wrapper
+  sui-sidebar-pushable
+    sui-sidebar-pusher.ui.full.height(:class="isSideBarVisible() ? 'pushed' : 'unpushed'" :dimmed='isDimmed()' @click='(isSideBarVisible()) ? toggleSideBar() : null')
+      router-view(@event='clickedPlay')
+  MenuButton(@event='toggleSideBar')
+  SideBar(:visible='isSideBarVisible()')
+  BottomBar
 </template>
 
 <script>
+import SideBar from '@/components/SideBar'
+import BottomBar from '@/components/BottomBar'
+import MenuButton from '@/components/MenuButton'
+
 export default {
-  name: 'BasicLayout'
-}
-</script>
+  name: 'FrontendLayout',
 
-<style lang="scss">
-.basic-layout {
-  color: #636b6f;
-  height: 100vh;
-  font-weight: 100;
-  position: relative;
+  components: {
+    SideBar,
+    BottomBar,
+    MenuButton
+  },
 
-  .links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+  data () {
+    return {
+      visible: false,
+      window: {
+        width: 0,
+        height: 0,
+        iMobileWidth: 770
+      }
+    }
+  },
+
+  created () {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+
+  destroyed () {
+    window.removeEventListener('resize', this.handleResize)
+  },
+
+  methods: {
+    clickedPlay: function () {
+      console.log('joghurtmann von parent')
+    },
+    isSideBarVisible: function () {
+      return this.window.width >= this.window.iMobileWidth || this.visible
+    },
+    isDimmed: function () {
+      return this.isSideBarVisible() && this.window.width < this.window.iMobileWidth
+    },
+    toggleSideBar: function () {
+      this.visible = !this.visible
+    },
+    handleResize () {
+      this.window.width = window.innerWidth
+      this.window.height = window.innerHeight
+    }
   }
 }
-</style>
+</script>

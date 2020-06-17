@@ -1,36 +1,25 @@
 <template lang="pug">
-#app
-  router-view(:xis="layout")
+.app(id=app)
+  component(:is='layout')
 </template>
 
 <script>
-// Load layout components dynamically.
-
 export default {
-  data: () => ({
-    layout: null,
-    defaultLayout: 'frontend'
-  }),
+  name: 'App',
 
-  metaInfo () {
-    const { appName } = window.config
-
+  data () {
     return {
-      title: appName,
-      titleTemplate: `%s · ${appName}`
+    }
+  },
+
+  computed: {
+    layout () {
+      return (this.$route.meta.layout || 'basic') + '-layout'
     }
   },
 
   mounted () {
     this.$loading = this.$refs.loading
-  },
-
-  methods: {
   }
 }
 </script>
-
-
-<style>
-
-</style>
