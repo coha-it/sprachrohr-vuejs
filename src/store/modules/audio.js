@@ -1,9 +1,9 @@
 import axios from 'axios'
-import * as types from '../mutation-types'
+import * as types from '@/store/mutation-types'
 
 // state
 export const state = {
-  podcasts: null
+  podcasts: []
 }
 
 // getters
@@ -22,7 +22,7 @@ export const mutations = {
 export const actions = {
   async fetchPodcasts ({ commit }) {
     try {
-      const { data } = await axios.get('/api/podcasts')
+      const { data } = await axios.get('http://127.0.0.1:3000/api/podcasts')
       commit(types.FETCH_PODCASTS_SUCCESS, { podcasts: data })
     } catch (e) {
       commit(types.FETCH_PODCASTS_FAILURE)

@@ -19,10 +19,7 @@ const modules = requireContext.keys()
     return { ...modules, [name]: module }
   }, {})
 
-/* eslint-disable no-new */
-const store = new Vuex.Store({
+export default new Vuex.Store({
   plugins: [createPersistedState()],
   modules
 })
-
-export default store
