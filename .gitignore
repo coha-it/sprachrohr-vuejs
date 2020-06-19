@@ -22,4 +22,5 @@ pnpm-debug.log*
 *.sw?
 
 # Ignore dist folders
-/public/dist/*
+/public/dist
+/public/sem-dist
