@@ -1,17 +1,12 @@
 <template lang="pug">
-  sui-menu(
-    is="sui-sidebar"
-    :visible="visible"
-    :dimmed="dimmed"
-    animation="overlay"
-    direction="right"
-    vertical
+  .ui.sidebar.vertical.menu.right.overlay(
+    :class="(visible ? 'visible ' : '') + (dimmed ? 'dimmed ' : '')"
   )
-    sui-menu-item(@click="$router.push({name: 'podcasts'})")
-      sui-icon(name="home")
+    .item(@click="$router.push({name: 'podcasts'})")
+      i.home.icon
       | Podcasts
-    sui-menu-item(@click="$router.push({name: 'demo'})")
-      sui-icon(name="demo")
+    .item(@click="$router.push({name: 'demo'})")
+      i.demo.icon
       | Demo
 </template>
 

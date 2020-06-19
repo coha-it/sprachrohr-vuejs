@@ -1,5 +1,5 @@
 <template lang="pug">
-sui-menu(is="sui-sidebar" animation="overlay" direction="bottom" visible position="fixed")
+.ui.menu.sidebar.bottom.visible.overlay.fixed
   Player
 </template>
 

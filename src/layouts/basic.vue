@@ -1,7 +1,7 @@
 <template lang="pug">
 .basic-layout-wrapper
-  sui-sidebar-pushable
-    sui-sidebar-pusher.ui.full.height(:class="isSideBarVisible() ? 'pushed' : 'unpushed'" :dimmed='isDimmed()' @click='(isSideBarVisible()) ? toggleSideBar() : null')
+  .pushable
+    .ui.pusher.full.height(:class="isSideBarVisible() ? 'pushed' : 'unpushed'" :dimmed='isDimmed()' @click='(isSideBarVisible()) ? toggleSideBar() : null')
       router-view(@event='clickedPlay')
   MenuButton(@event='toggleSideBar')
   SideBar(:visible='isSideBarVisible()')

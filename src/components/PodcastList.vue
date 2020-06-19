@@ -13,10 +13,10 @@ div
               p.desc.short
                 | {{ podcast.desc_short }}
               template(v-if='getCurrentPodcastId() === podcast.id')
-                sui-button(primary='' disabled='' active='' readonly='')
+                button.ui.button(primary='' disabled='' active='' readonly='')
                   | Wird abgespielt
               template(v-else='')
-                sui-button(primary='' @click='clickedPlay(podcast)') Anh&ouml;ren
+                button.ui.button(primary='' @click='clickedPlay(podcast)') Anh&ouml;ren
             .description
               p
             .extra
