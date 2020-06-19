@@ -1,5 +1,5 @@
 // Import Semantic Ui SCSS
-import 'semantic-ui-css/semantic.min.css'
+import '../public/dist/semantic.min.css'
 import '@/styles/main.sass'
 
 // Import Semantic Ui Basics
