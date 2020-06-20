@@ -4,7 +4,7 @@ div
     .content(style='padding: 0;')
       .ui.items
         .item
-          .ui.medium.image
+          .ui.medium.image(v-if='podcast.image')
             img(:src='podcast.image')
           .content(style='padding: 1rem;')
             a.header
@@ -12,7 +12,7 @@ div
             .meta
               p.desc.short
                 | {{ podcast.desc_short }}
-              template(v-if='getCurrentPodcastId() === podcast.id')
+              template(v-if='getCurrentPodcastId() === podcast._id')
                 button.ui.button(primary='' disabled='' active='' readonly='')
                   | Wird abgespielt
               template(v-else='')
@@ -54,7 +54,7 @@ export default {
     },
 
     getCurrentPodcastId () {
-      return this.podcast ? this.podcast.id : 0
+      return this.podcast ? this.podcast._id : 0
     }
   }
 
